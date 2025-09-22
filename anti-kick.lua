@@ -66,7 +66,7 @@ local CompareInstances = (CompareInstances and function(Instance1, Instance2)
 	end)
 or
 function(Instance1, Instance2)
-	return (typeof(Instance1) == "Instance" and typeof(Instance2) == "Instance")-- and GetDebugId(Instance1) == GetDebugId(Instance2)
+	return (typeof(Instance1) == "Instance" and typeof(Instance2) == "Instance")
 end
 local CanCastToSTDString = function(...)
 	return pcall(FindFirstChild, game, ...)
@@ -83,7 +83,7 @@ local OldNamecall; OldNamecall = hookmetamethod(game, "__namecall", newcclosure(
 		if CanCastToSTDString(message) then
 			if getgenv().AntiKick.SendNotifications then
 				SetCore(StarterGui, "SendNotification", {
-					Title = "Exunys Developer - Anti-Kick",
+					Title = "Anti-Kick",
 					Text = "Successfully intercepted an attempted kick.",
 					Icon = "rbxassetid://6238540373",
 					Duration = 2
